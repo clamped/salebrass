@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import logo from '../img/logo.jpg'
+
+import facebook from '../img/social/facebook.svg'
+import instagram from '../img/social/instagram.svg'
+import twitter from '../img/social/twitter.svg'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -42,7 +45,7 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
+              <img src={logo} alt="Sale Brass" style={{ 'width': '4rem', 'max-height': '4rem' }} />
             </Link>
             {/* Hamburger menu */}
             <div
@@ -63,17 +66,17 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/about">
                 About
               </Link>
-              <Link className="navbar-item" to="/products">
-                Products
+              <Link className="navbar-item" to="/news">
+                News
               </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
+              <Link className="navbar-item" to="/events">
+                Events
+              </Link>
+              <Link className="navbar-item" to="/vacancies">
+                Vacancies
               </Link>
               <Link className="navbar-item" to="/contact">
                 Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
               </Link>
             </div>
             <div className="navbar-end has-text-centered">
@@ -83,9 +86,34 @@ const Navbar = class extends React.Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
+              </a>
+            </div>
+            <div className="navbar-item">
+              <a title="facebook" href="https://www.facebook.com/salebrass/">
+              <img
+                  src={facebook}
+                  alt="Facebook"
+                  style={{ width: '1em', height: '1em' }}
+                />
+              </a>
+            </div>
+            <div className="navbar-item">
+              <a title="twitter" href="https://twitter.com/SaleBrass">
+                <img
+                  className="fas fa-lg"
+                  src={twitter}
+                  alt="Twitter"
+                  style={{ width: '1em', height: '1em' }}
+                />
+              </a>
+            </div>
+            <div className="navbar-item">
+              <a title="instagram" href="https://www.instagram.com/salebrassband/">
+                <img
+                  src={instagram}
+                  alt="Instagram"
+                  style={{ width: '1em', height: '1em' }}
+                />
               </a>
             </div>
           </div>

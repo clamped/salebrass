@@ -1,6 +1,7 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
+title: Sale Brass
 image: /img/saleband.jpeg
+heading: A friendly, competing Brass Band in South Manchester
 ---
 
