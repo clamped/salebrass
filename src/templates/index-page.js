@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Features from '../components/Features'
 
 import Layout from '../components/Layout'
 
 export const IndexPageTemplate = ({
   image,
   title,
-  heading
+  heading,
+  intro
 }) => (
   <div>
     <div
@@ -60,6 +62,19 @@ export const IndexPageTemplate = ({
         </h3>
       </div>
     </div>
+    <section className="section section--gradient">
+      <div className="container">
+        <div className="section">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div className="content">
+                <Features gridItems={intro.blurbs} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 )
 
@@ -81,6 +96,7 @@ const IndexPage = ({ data }) => {
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
+        intro={frontmatter.intro}
       />
     </Layout>
   )
@@ -94,7 +110,7 @@ IndexPage.propTypes = {
   }),
 }
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -109,7 +125,20 @@ export const pageQuery = graphql`
             }
           }
         }
-        
+        intro {
+          heading
+          description
+          blurbs {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 240, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            text
+          }
+        }
       }
     }
   }
