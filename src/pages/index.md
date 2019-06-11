@@ -20,17 +20,13 @@ intro:
         around Sale, the South Manchester and further afield too. We've recently
         played concerts in Glossop and Boarshurst and we have many more lined
         up. Check out our events page for upcoming fixtures. 
-    - image: /img/d0ajvhfxcaan-rs.jpg
-      text: >-
-        We're a social group and always looking for keen musicians to come
-        along!
   description: >-
     Sale Brass is a 4th section brass band based in Cheshire. We pride ourselves
     on being a very friendly and entertaining band and have a very active social
     side. We practise at the Claremont Centre in Sale on a Monday and Thursday
     evening between 8.00pm and 10.00pm. If you are new to the area and are
-    interested in joining the band please send us a message!. Feel free to get
-    in touch no matter what you play!
+    interested in joining the band please send us a message! Feel free to get in
+    touch no matter what you play.
 
 
     If you don’t have your own instrument, you are welcome to apply as we have
