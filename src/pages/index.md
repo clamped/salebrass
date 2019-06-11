@@ -20,6 +20,10 @@ intro:
         around Sale, the South Manchester and further afield too. We've recently
         played concerts in Glossop and Boarshurst and we have many more lined
         up. Check out our events page for upcoming fixtures. 
+    - image: /img/d0ajvhfxcaan-rs.jpg
+      text: >-
+        We're a social group and always looking for keen musicians to come
+        along!
   description: >-
     Sale Brass is a 4th section brass band based in Cheshire. We pride ourselves
     on being a very friendly and entertaining band and have a very active social
