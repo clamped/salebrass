@@ -37,17 +37,6 @@ collections:
   #     - {label: "Body", name: "body", widget: "markdown"}
   #     - {label: "Tags", name: "tags", widget: "list"}
 
-  - name: "vacancies"
-    label: "Vacancies"
-    folder: "src/pages/vacancies"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "vacancy"}
-      - {label: "Title", name: "title", widget: "select", options: ["Cornet", "Soprano Cornet", "Tenor Horn", "Flugelhorn", "Euphonium", "Baritone", "Trombone", "Eb Tuba", "Bb Tuba", "Percussion"]}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-
   - name: "pages"
     label: "Pages"
     files:
@@ -56,10 +45,20 @@ collections:
         name: "index"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Heading", name: "heading", widget: "string"}
+          - {label: "Intro", name: "intro", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Description", name: "description", widget: "text"}, {label: "Blurbs", name: "blurbs", widget: "list", fields: [{label: "Image", name: "image", widget: "image"}, {label: "Text", name: "text", widget: "text"}]}]}
+      
+      - file: "src/pages/vacancies/index.md"
+        label: "Vacancies Page"
+        name: "vacancies"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "vacancies-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "markdown"}
+          - {label: "Vacancies", name: "vacancies", widget: "list", fields: [{label: "Position", name: "position", widget: "select", options: ["Cornet", "Soprano Cornet", "Tenor Horn", "Flugelhorn", "Euphonium", "Baritone", "Trombone", "Eb Tuba", "Bb Tuba", "Percussion"]},{label: "Publish Date", name: "date", widget: "datetime"},{label: "Description", name: "description", widget: "text"}]}
+
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
