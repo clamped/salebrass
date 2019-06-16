@@ -1,5 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Hashes from 'jshashes';
+
+const generateHash = signature => new Hashes.SHA256().b64(signature);
 
 const Vacancies = ({ vacancyItems }) => {
   if (!vacancyItems) {
@@ -7,17 +10,50 @@ const Vacancies = ({ vacancyItems }) => {
   }
 
   return (
-    <div className="columns is-multiline">
+    <section className="section">
+      <div className="columns vacancyHeader">
+        <div className="column is-one-quarter"> 
+            <p style={{
+              backgroundColor: 'rgb(65, 110, 130)'
+            }}>
+              Instrument
+            </p>
+        </div>
+        <div className="column is-one-quarter">
+          <p style={{
+            backgroundColor: 'rgb(65, 110, 130)'
+          }}>
+            Date Posted
+          </p>
+        </div>
+        <div className="column">
+          <p style={{
+            backgroundColor: 'rgb(65, 110, 130)'
+          }}>
+            Details
+          </p>
+        </div>
+      </div>
       {vacancyItems.map(item => (
-        <div className="column is-6">
-          <section className="section">
-            <h3>{item.position}</h3>
-            <h4>{item.date}</h4>
-            <p>{item.description}</p>
-          </section>
+        <div className="columns" key={generateHash(item.description + item.date)}>
+          <div className="column is-one-quarter">
+            <p className="has-text-weight-semibold">
+              {item.position}
+            </p>
+          </div>
+          <div className="column is-one-quarter">
+            <p>
+              {item.date}
+            </p>
+          </div>
+          <div className="column">
+            <p>
+              {item.description}
+            </p>
+          </div>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

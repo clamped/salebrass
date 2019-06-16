@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { VacanciesPageTemplate } from '../../templates/vacancies-page'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { VacanciesPageTemplate } from '../../templates/vacancies-page';
 
 const VacanciesPagePreview = ({ entry, getAsset }) => {
-  const data = entry.getIn(['data']).toJS()
+  const data = entry.getIn(['data']).toJS();
 
   if (data) {
     return (

@@ -20,8 +20,6 @@ export const VacanciesPageTemplate = ({
               </h2>
               <p>{description}</p>
             </div>
-          </div>
-          <div className="section">
             <Vacancies vacancyItems={vacancies} />
           </div>
         </div>
@@ -62,10 +60,16 @@ export default VacanciesPage;
 
 export const pageQuery = graphql`
   query VacanciesPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "vacancies-page" } }) {
+    markdownRemark(frontmatter: {templateKey: {eq: "vacancies-page"}}) {
       frontmatter {
         title
         description
+        templateKey
+        vacancies {
+          position
+          date(formatString: "MMMM Do, YYYY")
+          description
+        }
       }
     }
   }
